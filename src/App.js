@@ -1,14 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import { IceCreamList } from './IceCreamList.js';
 import './App.css';
+
+const history = createBrowserHistory();
 
 function App() {
   return (
+    <Router history={history}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+      <Link to="/">Home</Link>
+      <Link to="/ice-cream/">Ice Cream</Link>
+      <Switch>
+          <Route exact path="/ice-cream/" component={IceCreamList} />
+          {/* <Route exact path="/:name?" component={Home} />   */}
+          {/* <Route component={NotFound}/> */}
+      </Switch>
     </div>
+    </Router>
   );
 }
 
