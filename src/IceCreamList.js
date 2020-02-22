@@ -11,7 +11,7 @@ export class IceCreamList extends Component {
         const data = await getIceCream();
 
         console.log(data.body);
-    
+        
         if (data.body) {
             this.setState({ icecreams: data.body })
         }
