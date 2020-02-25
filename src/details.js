@@ -14,17 +14,16 @@ export class Details extends Component {
         }
 
     render() {
-        console.log('refreshing...')
-        
+        console.log('refreshing...');
         return (
-            <li>
+            <div>
+                <img src={this.state.iceCreamFlavor.img_url ? this.state.iceCreamFlavor.img_url.includes('http') ? this.state.iceCreamFlavor.img_url : `https://hidden-forest-86930.herokuapp.com/${this.state.iceCreamFlavor.img_url}` : ''} alt={this.state.iceCreamFlavor.flavor} />
                 <p>{this.state.iceCreamFlavor.flavor}</p>   
                 <p>{this.state.iceCreamFlavor.type}</p>   
                 <p>{this.state.iceCreamFlavor.vegan ? 'Vegan' : ''}</p>   
                 <p>Will's Licks: {this.state.iceCreamFlavor.will_licks}</p>   
                 <p>Logan's Licks: {this.state.iceCreamFlavor.logan_licks}</p> 
-                <img src={this.state.iceCreamFlavor.img_url ? this.state.iceCreamFlavor.img_url.includes('http') ? this.state.iceCreamFlavor.img_url : `https://hidden-forest-86930.herokuapp.com/${this.state.iceCreamFlavor.img_url}` : ''} alt={this.state.iceCreamFlavor.flavor} />
-            </li>
+            </div>
         )
     }
 }

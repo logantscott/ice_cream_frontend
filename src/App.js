@@ -14,14 +14,16 @@ function App() {
   return (
     <Router history={history}>
     <div className="App">
+    <header>
       <Link to="/">Home</Link><br />
       <Link to="/ice-cream/">Ice Cream</Link><br />
       <Link to ="/create-ice-cream">Create Ice Cream</Link><br />
       Types: <Types />
+    </header>
       <Switch>
           <Route exact path="/ice-cream/" component={IceCreamList} />
           <Route exact path="/create-ice-cream/" component={CreateIceCream} />
-          <Route exact path="/ice-cream/:flavor" component={Details} />  
+          <Route exact path="/ice-cream/:flavor" component={Details} />
           <Route exact path="/ice-cream/type/:type" component={Type} />
           {/* <Route component={NotFound}/> */}
       </Switch>
