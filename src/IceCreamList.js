@@ -17,16 +17,12 @@ export class IceCreamList extends Component {
         }
     }
     
-
     render() {
         console.log('thestuff', this.state.icecreams)
         return (
-            
             <ul>
                 {this.state.icecreams.map(icecream => (
-                    
                     <IceCream icecream={icecream} />
-                    
                 ))}
             </ul>
         )
