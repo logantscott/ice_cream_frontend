@@ -15,7 +15,7 @@ export class IceCreamList extends Component {
         if (data.body) {
             this.setState({ icecreams: data.body })
         }
-        }
+    }
     
 
     render() {
@@ -26,7 +26,7 @@ export class IceCreamList extends Component {
                 {this.state.icecreams.map(icecream => (
                     
                     <IceCream icecream={icecream} />
-
+                    
                 ))}
             </ul>
         )

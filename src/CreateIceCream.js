@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import request from 'superagent';
-import { getTypes } from './ice-cream-api.js'; // get Types endpoint call from api.js
+import { getTypes, createIceCream } from './ice-cream-api.js'; // get Types endpoint call from api.js
 
 export class CreateIceCream extends Component {
     state = {
@@ -53,10 +53,10 @@ export class CreateIceCream extends Component {
             logan_licks: this.state.logan_licks,
             vegan: this.state.vegan
         }
-        // newIceCream = await request.post('', newIceCream);
+        newIceCream = await createIceCream(newIceCream);
         console.log(newIceCream)
         alert(JSON.stringify(newIceCream, null, 2))
-        // this.props.history.push('/');
+        this.props.history.push('/');
     }
     render() {
         return (
